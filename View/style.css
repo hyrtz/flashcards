@@ -1,0 +1,101 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap'); */
+
+* {
+  font-family: poppins, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ADD FLASHCARDS PAGE */
+
+
+
+/* lANDING PAGE */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: poppins, sans-serif;
+}
+
+h3 { 
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.bttn {
+  color: #fff;
+  background-color: #5551FF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: ease-in 0.1s;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+
+.bttn:hover {
+  background-color: #3431DC;
+  cursor: pointer;
+  transition: ease-in 0.2s;
+}
+
+
+/* NAV BAR */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6rem;
+  background-color: #fff;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  box-sizing: border-box;
+
+}
+
+.logo {
+  width: 8rem;
+}
+
+.home {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-left: 3rem;
+  margin-right: auto;
+}
+
+.home:hover {
+  color: #5551FF;
+  transition: ease-in 0.1s;
+}
+
+li {
+  list-style-type: none;
+}
+
+.create_flashcards {
+  color: #fff;
+  background-color: #5551FF;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: ease-in 0.1s;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.create_flashcards:hover {
+  background-color: #3431DC;
+  cursor: pointer;
+}
