@@ -9,22 +9,69 @@
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
     </style>
   </head>
-  
   <body>
-
-    <nav class="nav-bar">
-      <img src="/imgs/logo2.png" alt="Flashcards Logo" class="logo" href="Landing_Page.html"/>
-      
+    <nav class="nav-bar" id="nav-bar">
+      <a href="Landing_Page.html" target="_blank"><img src="/imgs/logo2.png" alt="Flashcards Logo" class="logo"/></a>
       <a href="Dashboard_Page.html" class="home">Home</a>
-
-      <ul class="nav-links">
+      <!-- <ul class="nav-links">
         <li>
           <a type="button" href="Create_Flashcards.html" class="create_flashcards" target="_blank">
             Create Flashcards
           </a>
         </li>
-      </ul>
-
+      </ul> -->
     </nav>
+
+    <div class="create-flashcards-container">
+        <p class="create-flashcards-title">Create New Flashcard</p>
+    </div>
+
+    <div class="flashcard-form">
+      <form id="my-form" action="/create_flashcard" method="POST">
+          <div class="flashcard-title">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter title" required/>
+          </div>
+          
+          <div class="flashcard-inputs">
+              <!-- Front -->
+              <div class="front-inputs">
+                  <label for="front">Front</label>
+                  <input required id="front" name="front" rows="1" placeholder="Add here..."/>
+              </div>
+              
+              <!-- Back -->
+              <div class="back-inputs">
+                  <label for="back">Back</label>
+                  <input required id="back" name="back" rows="1" placeholder="Add here..."/>
+                  
+                  <div class="audio">
+                      <input id="audio-input" name="audio" type="file" accept="audio/*"/>
+                      <button type="button" class="add-audio-bttn">Add Audio</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+    </div>
+
+    <div class="add-another-card-container">
+      <button type="button" class="add-card-bttn">Add Card</button>
+    </div>
+
+    <div class="form-actions">
+        <button type="button" class="cancel-bttn">Cancel</button>
+        <button type="submit" class="create-bttn">Create</button>
+    </div>
+
+
+
+    <script>
+        // Enable audio input when "Add Audio" button is clicked
+        document.querySelector('.add-audio-bttn').addEventListener('click', function() {
+            const audioInput = document.getElementById('audio-input');
+            audioInput.disabled = false;
+            audioInput.click();
+        });
+    </script>
   </body>
 </html>
