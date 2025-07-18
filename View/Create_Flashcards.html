@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Flashcards</title>
     <link rel="stylesheet" href="style.css"/>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
-    </style>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <nav class="nav-bar" id="nav-bar">
@@ -46,32 +44,27 @@
                   <input required id="back" name="back" rows="1" placeholder="Add here..."/>
                   
                   <div class="audio">
+                    <button type="button" class="add-audio-bttn">Add Audio</button>
                       <input id="audio-input" name="audio" type="file" accept="audio/*"/>
-                      <button type="button" class="add-audio-bttn">Add Audio</button>
                   </div>
               </div>
           </div>
+
+
+        <div class="add-another-card-container">
+          <button type="button" class="add-card-bttn">Add Card</button>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="cancel-bttn">Cancel</button>
+          <button type="submit" class="create-bttn">Create</button>
+        </div>
       </form>
     </div>
 
-    <div class="add-another-card-container">
-      <button type="button" class="add-card-bttn">Add Card</button>
-    </div>
+    
 
-    <div class="form-actions">
-        <button type="button" class="cancel-bttn">Cancel</button>
-        <button type="submit" class="create-bttn">Create</button>
-    </div>
-
-
-
-    <script>
-        // Enable audio input when "Add Audio" button is clicked
-        document.querySelector('.add-audio-bttn').addEventListener('click', function() {
-            const audioInput = document.getElementById('audio-input');
-            audioInput.disabled = false;
-            audioInput.click();
-        });
-    </script>
+    
+    
   </body>
 </html>

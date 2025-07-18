@@ -1,23 +1,163 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
 
-* {
+*, :before, :after{
   font-family: poppins, sans-serif;
   margin: 0;
   padding: 0;
   position: relative;
+  box-sizing: border-box;
+}
+
+/* PLAY FLASHCARDS */
+.back-bttn {
+  color: #757575;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: ease-in 0.1s;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  height: 2.6rem;
+  width: 6rem;
+}
+
+.back-bttn:hover {
+  background-color: #e8e9f6;
+}
+
+.back-bttn-container{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 32vh;
+  padding: 0 0 0 10rem; 
+  margin-bottom: -6rem;
 }
 
 
-/* CREATE FLASHCARDS PAGE */
+
+
+
+
+
+
+
+
+
+
+/* no flashcards created yet msg in dashhboard */
+.no-flashcards-created {
+  text-align: center;
+
+  p {
+    color: #A4A7AE;
+    font-size: 1.1rem;
+    margin: 4rem 0 1.5rem 0;
+     /* top left bottom right */
+  }
+}
+
+
+
+/* DASHBOARD PAGE */
+.flashcard-overview {
+  display: flex;
+  flex-wrap: row;
+}
+
+.flashcard-item {
+  display: flex;
+  width: 16rem;
+  height: 8rem;
+  border-radius: 6px;
+  margin: 1rem 0 0 1rem;
+  border: 2px solid #EEEDF5; 
+  transition: ease 0.2s;
+  padding: 1rem 0 0 1.5rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.flashcard-item:hover {
+  background-color: #f7f6fd;
+  cursor: pointer;
+  border: 2px solid #5551FF;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  
+}
+
+/* page content  */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  padding: 9rem 0rem 0 25rem;   /* top right bottom left */
+  width: 100%; 
+  box-sizing: border-box;
+  margin-right: auto;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  height:100%;
+  width:218px;
+  position:fixed!important;
+  z-index: 1;
+  overflow:auto;
+  height:100vh;
+  /* margin-left: 10rem;
+  margin-top: 10rem; */
+  /* top right bottom left */
+  margin: 10rem 10rem 0 10rem;
+  
+
+}
+
+/* class added after the user clicked the bar-item-bttn  */
+.special {
+  background-color: #F1F0FB !important;
+  border-left: 4px solid #5551FF;
+  transition: ease-in 0.2s;
+}
+
+.sidebar-item-bttn {
+  color: #0D0C22;
+  margin-top: 3rem;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  height: 3rem;
+  background-color: #fff;
+  align-items: center;
+  padding-left: 2rem;
+  font-size: 1rem;
+  transition: ease-in 0.2s;
+}
+
+
+.title-container {
+  padding:0.01em 16px;
+  width: 100%;
+}
+
+
 
 
 /* ADD ANOTHER FLASHCARD BTTN */
-
 .add-another-card-container, .form-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10rem;
+  padding: 0;
 }
 
 .add-card-bttn {       
@@ -33,19 +173,18 @@
   cursor: pointer;
   height: 2.6rem;
   align-items: center;
-  
 }
 
 .add-card-bttn:hover {
-  background-color: #5551FF;
-  color: #fff;
+  background-color: #ebe7ff;
+  color: #5551FF;
   transition: ease-in 0.1s;
 }
 
 
 
 /* ACTUAL FLASHCARDS CONTENT  */
-.flashcard-inputs { /* Fixed typo: was 'flashcard-ipnuts' */
+.flashcard-inputs {
   display: flex;
   flex-direction: column;
   border: 1px solid #DEDEDE;
@@ -53,27 +192,57 @@
   padding: 2rem 2rem 1rem 2rem;
   /* top left bottom right */
 
+  
+
 }
+
 
 .front-inputs, .back-inputs, .flashcard-title{
   display: flex;
   flex-direction: column;
 }
 
+
+#title, #front, #back {
+  width: auto;
+  color: #000000;
+
+}
+
 #title, #front, #back, #audio-input {
   border: 1px solid #DEDEDE;
   border-radius: 6px;
   padding: .6rem 1rem;
-  font-size: 14px; /* Fixed: was 'font: 14px' */
-  display: block; /* Fixed: removed conflicting flex properties */
+  font-size: 14px; 
+  display: block;
   margin-bottom: 1rem;
-  color: #B3B3B3;
+  color: #000;
+  
 }
 
-#front, #back {
-  width: auto;
-
+#title:focus {
+  outline: none;
+  border: 1px solid #5551FF;
 }
+
+
+#front:focus {
+  outline: none;
+  border: 1px solid #5551FF;
+}
+
+
+#back:focus {
+  outline: none;
+  border: 1px solid #5551FF;
+}
+
+
+#audio-input:focus {
+  outline: none;
+  border: 1px solid #5551FF;
+}
+
 
 .audio {
   display: flex; 
@@ -93,12 +262,11 @@
   text-decoration: none;
   cursor: pointer;
   height: 2.6rem;
-  /*  */
 }
 
 .add-audio-bttn:hover {
-  background-color: #5551FF;
-  color: #fff;
+  background-color: #ebe7ff;
+  color: #5551FF;
   transition: ease-in 0.1s;
 }
 
@@ -107,61 +275,26 @@
   flex-direction: column;
   padding: 0 10rem;
   margin-right: auto;
-  max-width: 1200px;
-  
-  
-
-  
+  max-width: 1200px; 
 }
+
 
 
 /* TITLE */
 .create-flashcards-container {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: left;
   height: 32vh;
-  padding: 0 10rem; 
+  padding: 0 0 0 10rem; 
+  margin-bottom: -6rem;
 }
 
-.create-flashcards-title {
+.create-flashcards-title, p{
   margin-right: auto;
   font-size: 1.4rem;
 }
 
-.cancel-bttn, .create-bttn {
-  color: #B3B3B3;
-  background-color: #fff;
-  border: 1px solid #DEDEDE;
-  border-radius: 6px;
-  padding: 8px 14px;
-  transition: ease-in 0.1s;
-  font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
-  
-}
-
-.cancel-bttn {
-  height: 2.6rem;
-  width: 6rem;
-}
-.create-bttn {
-  color: #fff;
-  background-color: #5551FF;
-  height: 2.5rem;
-  width: 6rem;
-  border: none;
-}
-
-.create-bttn:hover {
-  background-color: #3431DC;
-}
-
-.cancel-bttn:hover {
-  background-color: #f5f5f5;
-}
 
 label {
   font-weight: 500;
@@ -174,6 +307,43 @@ label {
   gap: .8rem;
   justify-content: flex-end;
   margin-top: 2rem;
+  position: relative;
+
+
+  .cancel-bttn, .create-bttn {
+  color: #757575;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: ease-in 0.1s;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  
+  }
+
+  .cancel-bttn {
+    height: 2.6rem;
+    width: 6rem;
+  }
+
+  .create-bttn {
+    color: #fff;
+    background-color: #5551FF;
+    height: 2.5rem;
+    width: 6rem;
+    border: none;
+  }
+
+  .create-bttn:hover {
+    background-color: #3431DC;
+  }
+
+  .cancel-bttn:hover {
+    background-color: #f5f5f5;
+  }
+
 }
 
 .audio input {
@@ -217,6 +387,7 @@ h3 {
   transition: ease-in 0.2s;
 }
 
+
 /* NAV BAR */
 .nav-bar {
   display: flex;
@@ -229,7 +400,7 @@ h3 {
   width: 100%;
   z-index: 10;
   box-sizing: border-box;
-  border: 1px solid #DEDEDE;
+  /* border: 1px solid #DEDEDE; */
 }
 
 #nav-bar {

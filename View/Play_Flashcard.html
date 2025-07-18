@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Flashcards</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="play_flashcard.css"/>
+  </head>
+  <body>
+    <nav class="nav-bar" id="nav-bar">
+      <a href="Landing_Page.html" target="_blank"><img src="/imgs/logo2.png" alt="Flashcards Logo" class="logo"/></a>
+      <a href="Dashboard_Page.html" class="home">Home</a>
+      <ul class="nav-links">
+        <li>
+          <a type="button" href="Create_Flashcards.html" class="create_flashcards" target="_blank">
+            Create Flashcards
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="back-bttn-container">
+      <button class="back-bttn" onclick="window.location.href='Dashboard_Page.html'">Back</button>
+    </div>
+
+    <div class="card">
+      <div class="card__inner">
+        <div class="card__face card__face--front">
+          <h2>I like anime.</h2>
+          <p>Click the card to flip </p>
+        </div>
+        <div class="card__face card__face--back">
+          <div class="card__content">
+            <h2> あにめがすき。</h2>
+            <span id="audio-placeholder" class="card__audio">Audio: No audio available</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const card = document.querySelector('.card__inner');
+
+      card.addEventListener('click', function(e) {
+        card.classList.toggle('is-flipped');
+      });
+
+      // Function to update the audio placeholder text
+      function updateAudioPlaceholder(audioFileName) {
+        const audioPlaceholder = document.getElementById('audio-placeholder');
+        if (audioFileName) {
+          audioPlaceholder.textContent = `Audio: ${audioFileName}`;
+        } else {
+          audioPlaceholder.textContent = 'Audio: No audio added';
+        }
+      }
+    </script>
+  </body>
+</html>
